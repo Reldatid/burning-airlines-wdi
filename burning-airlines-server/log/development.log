@@ -1,0 +1,464 @@
+  [1m[35m (367.7ms)[0m  [1m[35mCREATE DATABASE "burning-airlines-server_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (285.7ms)[0m  [1m[35mCREATE DATABASE "burning-airlines-server_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (31.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4808705032369488810)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreatePlanes (20181030095010)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "planes" ("id" bigserial primary key, "name" text, "rows" integer, "columns" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181030095010_create_planes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181030095010"]]
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-30 09:50:53.352754"], ["updated_at", "2018-10-30 09:50:53.352754"]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4808705032369488810)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlane Create (3.4ms)[0m  [1m[32mINSERT INTO "planes" ("name", "rows", "columns", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "747"], ["rows", 100], ["columns", 8], ["created_at", "2018-10-30 10:58:33.082383"], ["updated_at", "2018-10-30 10:58:33.082383"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPlane Load (0.7ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlane Destroy (1.5ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mPlane Load (0.6ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlane Create (0.5ms)[0m  [1m[32mINSERT INTO "planes" ("name", "rows", "columns", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "747"], ["rows", 100], ["columns", 8], ["created_at", "2018-10-30 11:01:29.684113"], ["updated_at", "2018-10-30 11:01:29.684113"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mPlane Load (0.8ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPlane Destroy (1.4ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlane Create (0.5ms)[0m  [1m[32mINSERT INTO "planes" ("name", "rows", "columns", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "747"], ["rows", 100], ["columns", 8], ["created_at", "2018-10-30 11:02:35.088769"], ["updated_at", "2018-10-30 11:02:35.088769"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPlane Create (0.3ms)[0m  [1m[32mINSERT INTO "planes" ("name", "rows", "columns", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "2PP"], ["rows", 7], ["columns", 2], ["created_at", "2018-10-30 11:02:35.091462"], ["updated_at", "2018-10-30 11:02:35.091462"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4808705032369488810)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateFlights (20181030111702)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "flights" ("id" bigserial primary key, "plane_id" integer, "date" date, "destination" text, "origin" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181030111702_create_flights.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181030111702"]]
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4808705032369488810)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started POST "/planes" for 127.0.0.1 at 2018-10-30 22:25:34 +1100
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlanesController#create as HTML
+  Parameters: {"name"=>"646", "rows"=>"70", "columns"=>"7"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+(pry):8:in `__pry__'
+Started POST "/planes" for 127.0.0.1 at 2018-10-30 22:26:08 +1100
+Processing by PlanesController#create as HTML
+  Parameters: {"name"=>"646", "rows"=>"70", "columns"=>"7"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlane Create (0.4ms)[0m  [1m[32mINSERT INTO "planes" ("name", "rows", "columns", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "646"], ["rows", 70], ["columns", 7], ["created_at", "2018-10-30 11:26:09.017854"], ["updated_at", "2018-10-30 11:26:09.017854"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://www.example.com/planes
+Completed 302 Found in 20ms (ActiveRecord: 7.8ms)
+
+
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+Started GET "/planes/5/delete" for 127.0.0.1 at 2018-10-30 22:29:34 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/planes/5/delete"):
+  
+(pry):11:in `__pry__'
+Started GET "/planes/5/delete" for 127.0.0.1 at 2018-10-30 22:30:21 +1100
+  
+NameError (undefined local variable or method `x' for main:Object):
+  
+config/routes.rb:8:in `<main>'
+(pry):12:in `__pry__'
+Started GET "/planes/5/delete" for 127.0.0.1 at 2018-10-30 22:31:14 +1100
+Processing by PlanesController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlane Destroy (0.4ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = $1[0m  [["id", 5]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 406 Not Acceptable in 155ms (ActiveRecord: 8.7ms)
+
+
+  
+ActionController::UnknownFormat (PlanesController#destroy is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+(pry):13:in `__pry__'
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+Started GET "/planes" for 127.0.0.1 at 2018-10-30 22:32:51 +1100
+Processing by PlanesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant PlanesController::Planes):
+  
+app/controllers/planes_controller.rb:15:in `index'
+(pry):15:in `__pry__'
+Started GET "/" for 127.0.0.1 at 2018-10-30 22:34:03 +1100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonathanodlum/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jonathanodlum/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jonathanodlum/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-30 22:34:07 +1100
+Processing by PlanesController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant PlanesController::Planes):
+  
+app/controllers/planes_controller.rb:15:in `index'
+Started GET "/planes" for 127.0.0.1 at 2018-10-30 22:34:18 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  Rendered planes/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 616ms (Views: 610.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-30 22:34:44 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  Rendered planes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 206ms (Views: 200.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlane Load (0.8ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFlight Create (5.3ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["plane_id", 4], ["destination", "there"], ["origin", "here"], ["created_at", "2018-10-30 11:45:41.272280"], ["updated_at", "2018-10-30 11:45:41.272280"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" ORDER BY "flights"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights" WHERE "flights"."plane_id" = $1[0m  [["plane_id", 4]]
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFlight Destroy (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+Started POST "/flights" for 127.0.0.1 at 2018-10-30 22:47:38 +1100
+  
+ActionController::RoutingError (No route matches [POST] "/flights"):
+  
+(pry):24:in `__pry__'
+Started POST "/flights" for 127.0.0.1 at 2018-10-30 22:48:38 +1100
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:9:in `block in <main>'
+config/routes.rb:1:in `<main>'
+(pry):25:in `__pry__'
+Started POST "/flights" for 127.0.0.1 at 2018-10-30 22:50:14 +1100
+  
+SyntaxError (/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/controllers/flights_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+      date: params[:date]
+      ^~~~
+/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/controllers/flights_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+      destination: params[:destination]
+                 ^
+/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/controllers/flights_controller.rb:8: syntax error, unexpected ':', expecting keyword_end
+      origin: params[:origin]
+            ^
+/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/controllers/flights_controller.rb:9: syntax error, unexpected ')', expecting keyword_end
+    )
+    ^):
+  
+app/controllers/flights_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/flights_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+app/controllers/flights_controller.rb:8: syntax error, unexpected ':', expecting keyword_end
+app/controllers/flights_controller.rb:9: syntax error, unexpected ')', expecting keyword_end
+(pry):26:in `__pry__'
+Started POST "/flights" for 127.0.0.1 at 2018-10-30 22:51:24 +1100
+Processing by FlightsController#create as HTML
+  Parameters: {"plane_id"=>"4", "destination"=>"there", "origin"=>"here"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+(pry):27:in `__pry__'
+Started POST "/flights" for 127.0.0.1 at 2018-10-30 22:51:45 +1100
+Processing by FlightsController#create as HTML
+  Parameters: {"plane_id"=>"4", "destination"=>"there", "origin"=>"here"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFlight Create (0.5ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["plane_id", 4], ["destination", "there"], ["origin", "here"], ["created_at", "2018-10-30 11:51:45.221291"], ["updated_at", "2018-10-30 11:51:45.221291"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://www.example.com/flights
+Completed 302 Found in 29ms (ActiveRecord: 12.9ms)
+
+
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights" WHERE "flights"."plane_id" = $1[0m  [["plane_id", 4]]
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights" WHERE "flights"."plane_id" = $1[0m  [["plane_id", 4]]
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" ORDER BY "flights"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFlight Destroy (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = $1[0m  [["id", 2]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/flights" for 127.0.0.1 at 2018-10-30 22:53:02 +1100
+Processing by FlightsController#create as HTML
+  Parameters: {"plane_id"=>"4", "destination"=>"there", "origin"=>"here"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFlight Create (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["plane_id", 4], ["destination", "there"], ["origin", "here"], ["created_at", "2018-10-30 11:53:02.170729"], ["updated_at", "2018-10-30 11:53:02.170729"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://www.example.com/flights
+Completed 302 Found in 5ms (ActiveRecord: 2.6ms)
+
+
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" ORDER BY "flights"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/flights/3/delete" for 127.0.0.1 at 2018-10-30 22:53:45 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/flights/3/delete"):
+  
+(pry):35:in `__pry__'
+Started GET "/flight/3/delete" for 127.0.0.1 at 2018-10-30 22:54:07 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/flight/3/delete"):
+  
+(pry):36:in `__pry__'
+Started GET "/flight/3/delete" for 127.0.0.1 at 2018-10-30 22:54:22 +1100
+Processing by FlightsController#destroy as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFlight Destroy (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering flights/destroy.html.erb within layouts/application
+  Rendered flights/destroy.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 99ms (Views: 82.5ms | ActiveRecord: 6.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4808705032369488810)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateReservations (20181030115644)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "flight_id" integer, "user_id" integer, "row" integer, "column" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181030115644_create_reservations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181030115644"]]
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4808705032369488810)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4808705032369488810)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateUsers (20181030120401)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" text, "name" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181030120401_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181030120401"]]
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4808705032369488810)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" ORDER BY "planes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFlight Create (3.9ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "date", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["plane_id", 3], ["date", "2018-08-09"], ["destination", "there"], ["origin", "here"], ["created_at", "2018-10-30 13:07:44.456253"], ["updated_at", "2018-10-30 13:07:44.456253"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mPlane Load (1.4ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPlane Destroy (0.9ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPlane Destroy (0.8ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mPlane Create (1.4ms)[0m  [1m[32mINSERT INTO "planes" ("name", "rows", "columns", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "747"], ["rows", 100], ["columns", 8], ["created_at", "2018-10-30 13:13:36.195560"], ["updated_at", "2018-10-30 13:13:36.195560"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlane Create (1.5ms)[0m  [1m[32mINSERT INTO "planes" ("name", "rows", "columns", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "2PP"], ["rows", 7], ["columns", 2], ["created_at", "2018-10-30 13:13:36.202112"], ["updated_at", "2018-10-30 13:13:36.202112"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlane Load (0.6ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ db/seeds.rb:15
+  [1m[36mFlight Load (1.0ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mFlight Destroy (0.8ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mPlane Load (0.6ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mFlight Create (1.0ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "date", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["plane_id", 6], ["date", "2018-08-09"], ["destination", "there"], ["origin", "here"], ["created_at", "2018-10-30 13:13:36.257382"], ["updated_at", "2018-10-30 13:13:36.257382"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mFlight Create (0.6ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "date", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["plane_id", 7], ["date", "2018-08-09"], ["destination", "here"], ["origin", "there"], ["created_at", "2018-10-30 13:13:36.264118"], ["updated_at", "2018-10-30 13:13:36.264118"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "bill@fillmurray.com"], ["name", "Phill Murray"], ["created_at", "2018-10-30 13:13:36.314121"], ["updated_at", "2018-10-30 13:13:36.314121"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:32
+  [1m[36mReservation Load (2.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mReservation Create (2.6ms)[0m  [1m[32mINSERT INTO "reservations" ("flight_id", "user_id", "row", "column", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["flight_id", 5], ["user_id", 1], ["row", 5], ["column", 2], ["created_at", "2018-10-30 13:13:36.373491"], ["updated_at", "2018-10-30 13:13:36.373491"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mReservation Create (0.8ms)[0m  [1m[32mINSERT INTO "reservations" ("flight_id", "user_id", "row", "column", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["flight_id", 6], ["user_id", 1], ["row", 5], ["column", 2], ["created_at", "2018-10-30 13:13:36.400648"], ["updated_at", "2018-10-30 13:13:36.400648"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[36mPlane Load (0.8ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" ORDER BY "reservations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" ORDER BY "reservations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" ORDER BY "reservations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
