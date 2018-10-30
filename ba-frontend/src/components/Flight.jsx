@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class Reservation extends Component{
+class Flight extends Component{
   render(){
     return(
       <div>
@@ -11,4 +11,4 @@ class Reservation extends Component{
   }
 }
 
-export default Reservation;
+export default Flight;

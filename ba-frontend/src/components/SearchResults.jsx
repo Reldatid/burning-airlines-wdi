@@ -50,7 +50,7 @@ class SearchResults extends Component {
                 <li>Flight Id: {f.id}</li>
                 <li>Plane Id: {f.id}</li>
                 <li>Date: {f.date}</li>
-                <li><Link to={`/reservation/${f.id}`}>Reserve Seats</Link></li>
+                <li><Link to={`/flight/${f.id}`}>Reserve Seats</Link></li>
               </ul>
             )
           }
