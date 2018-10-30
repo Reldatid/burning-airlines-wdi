@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/flights' => 'flights#index'
   post '/flights' => 'flights#create'
   get '/flight/:id/delete' => 'flights#destroy'
-  get '/flight/search' => 'flights#search'
+  get '/flights/search' => 'flights#search'
 
   get '/reservations' => 'reservations#index'
   post '/reservations' => 'reservations#create'
