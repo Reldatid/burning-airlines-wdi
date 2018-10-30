@@ -18,8 +18,9 @@ puts "Created #{Plane.all.length} Planes!"
 Flight.destroy_all
 puts "Creating Flights..."
 
-f1 = Flight.create date:'2018/08/09', destination:'there', origin:'here', plane_id: p1.id
-f2 = Flight.create date:'2018/08/09', destination:'here', origin:'there', plane_id: p2.id
+f1 = Flight.create date:'2018/08/09', destination:'SFO', origin:'SYD', plane_id: p1.id
+f2 = Flight.create date:'2018/07/09', destination:'SYD', origin:'BNE', plane_id: p2.id
+f3 = Flight.create date:'2018/08/10', destination:'SFO', origin:'SYD', plane_id: p2.id
 
 puts "Created #{Flight.all.length} Flights!"
 

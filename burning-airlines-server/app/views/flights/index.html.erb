@@ -1,2 +1,19 @@
-<h1>Flights#index</h1>
-<p>Find me in app/views/flights/index.html.erb</p>
+<h1>All Flights</h1>
+<ul>
+  <% @flights.each do |flight| %>
+    <li>
+      <%= flight.plane.name %> - <%= flight.date %> - <%= flight.origin %> to <%= flight.destination %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Create a flight</h3>
+<%= form_for @flight do |f|%>
+  <strong> Origin: </strong><%= f.text_field :origin %><br>
+  <strong> Destination: </strong><%= f.text_field :destination %><br>
+  <strong> Date: </strong>
+  <%= f.date_field :date %><br>
+  <strong> plane: </strong><%= f.text_field :plane_id %><br>
+
+  <%= f.submit %>
+<% end %>

@@ -462,3 +462,1027 @@ Migrating to CreateUsers (20181030120401)
   [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" ORDER BY "reservations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" ORDER BY "reservations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:03:26 +1100
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonathanodlum/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  Rendered planes/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/views/planes/index.html.erb:16: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/planes/index.html.erb:16: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:04:02 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (9.0ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (121.7ms)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 67.5ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     8: </ul>
+     9: 
+    10: <h3>Create a Plane</h3>
+    11: <%= form_for @plane do |f|%>
+    12: <% end %>
+  
+app/views/planes/index.html.erb:11:in `_app_views_planes_index_html_erb__695038692427208569_70246329797520'
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:04:20 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     8: </ul>
+     9: 
+    10: <h3>Create a Plane</h3>
+    11: <!-- <%= form_for @plane do |f|%>
+    12: <% end %> -->
+  
+app/views/planes/index.html.erb:11:in `_app_views_planes_index_html_erb__695038692427208569_70246287157220'
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:04:30 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 106ms (Views: 103.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:04:42 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (1.1ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 58ms (Views: 53.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:06:42 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (0.8ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     8: </ul>
+     9: 
+    10: <h3>Create a Plane</h3>
+    11: <%= form_for @plane do |f|%>
+    12: <strong> Name: </strong><%= f.text_field :name %><br>
+    13:     <strong> rows </strong><br>
+    14:   <%= f.text_field :rows %><br>
+  
+app/views/planes/index.html.erb:11:in `_app_views_planes_index_html_erb__695038692427208569_70246329862040'
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:07:51 +1100
+Processing by PlanesController#index as HTML
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `plane' for #<PlanesController:0x00007fc6fcc30a58>):
+  
+app/controllers/planes_controller.rb:15:in `index'
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:08:06 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 84ms (Views: 58.9ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:08:44 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 52ms (Views: 48.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:09:16 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 35ms (Views: 31.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:09:32 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (1.1ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 62ms (Views: 58.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/planes" for 127.0.0.1 at 2018-10-31 01:09:57 +1100
+Processing by PlanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JmcJW5Gwd09XQNH72tESGdoLSXBxerOeQXyZtq7UBlLuyHILvTWLF3gzFXqTq6CC1P/MJxz40a88vHaFqFJGZA==", "plane"=>{"name"=>"777", "rows"=>"150", "columns"=>"9"}, "commit"=>"Create Plane"}
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/planes_controller.rb:6
+  [1m[36mPlane Create (9.3ms)[0m  [1m[32mINSERT INTO "planes" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-10-30 14:09:57.914579"], ["updated_at", "2018-10-30 14:09:57.914579"]]
+  ↳ app/controllers/planes_controller.rb:6
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/planes_controller.rb:6
+Redirected to http://localhost:3000/planes
+Completed 302 Found in 18ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:09:57 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/planes" for 127.0.0.1 at 2018-10-31 01:10:49 +1100
+  
+SyntaxError (/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/controllers/planes_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+...  columns: params[:columns]to_i
+...                           ^~~~):
+  
+app/controllers/planes_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started POST "/planes" for 127.0.0.1 at 2018-10-31 01:11:03 +1100
+Processing by PlanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jpgk7q9pkNgNmsKwsMkHA4P3voSaqMeLKljnGDqBnHbuN1++g+xsgCLpBjH5s7WYjQM70/cqpbpXmAgrPAfcQA==", "plane"=>{"name"=>"777", "rows"=>"150", "columns"=>"9"}, "commit"=>"Create Plane"}
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/planes_controller.rb:6
+  [1m[36mPlane Create (6.3ms)[0m  [1m[32mINSERT INTO "planes" ("rows", "columns", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["rows", 0], ["columns", 0], ["created_at", "2018-10-30 14:11:03.692413"], ["updated_at", "2018-10-30 14:11:03.692413"]]
+  ↳ app/controllers/planes_controller.rb:6
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/planes_controller.rb:6
+Redirected to http://localhost:3000/planes
+Completed 302 Found in 34ms (ActiveRecord: 18.1ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:11:03 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 48ms (Views: 42.7ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mPlane Load (3.5ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+Started POST "/planes" for 127.0.0.1 at 2018-10-31 01:12:44 +1100
+Processing by PlanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"42+dOe4z1plIRwsRKKPeF77UavE0VViy3U10mp8daWkrwOZpwrYqwWc0z5Bh2WyMsCDvplnXOoOgjZupmZspXw==", "plane"=>{"name"=>"777", "rows"=>"150", "columns"=>"9"}, "commit"=>"Create Plane"}
+Redirected to http://localhost:3000/planes
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:12:44 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (1.0ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 71ms (Views: 51.9ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/planes" for 127.0.0.1 at 2018-10-31 01:13:57 +1100
+Processing by PlanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ijoGNRoOrGlRjv0dsxFO4NWjEgDR9gSj/RAaUt9CZ8JClX1lNotQMX79OZz6a/x721eXV7x0ZpKA0PVh2cQn9A==", "plane"=>{"name"=>"777", "rows"=>"150", "columns"=>"9"}, "commit"=>"Create Plane"}
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `log' for #<PlanesController:0x00007fc6fa4f3710>
+Did you mean?  loop):
+  
+app/controllers/planes_controller.rb:6:in `create'
+Started POST "/planes" for 127.0.0.1 at 2018-10-31 01:14:12 +1100
+Processing by PlanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ijoGNRoOrGlRjv0dsxFO4NWjEgDR9gSj/RAaUt9CZ8JClX1lNotQMX79OZz6a/x721eXV7x0ZpKA0PVh2cQn9A==", "plane"=>{"name"=>"777", "rows"=>"150", "columns"=>"9"}, "commit"=>"Create Plane"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `plane' for #<ActionController::Parameters:0x00007fc6f92c2d70>):
+  
+app/controllers/planes_controller.rb:6:in `create'
+Started POST "/planes" for 127.0.0.1 at 2018-10-31 01:14:32 +1100
+Processing by PlanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ijoGNRoOrGlRjv0dsxFO4NWjEgDR9gSj/RAaUt9CZ8JClX1lNotQMX79OZz6a/x721eXV7x0ZpKA0PVh2cQn9A==", "plane"=>{"name"=>"777", "rows"=>"150", "columns"=>"9"}, "commit"=>"Create Plane"}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 7.8ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/planes_controller.rb:6:in `create'
+Started POST "/planes" for 127.0.0.1 at 2018-10-31 01:15:28 +1100
+Processing by PlanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ijoGNRoOrGlRjv0dsxFO4NWjEgDR9gSj/RAaUt9CZ8JClX1lNotQMX79OZz6a/x721eXV7x0ZpKA0PVh2cQn9A==", "plane"=>{"name"=>"777", "rows"=>"150", "columns"=>"9"}, "commit"=>"Create Plane"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 6.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/planes_controller.rb:6:in `create'
+Started POST "/planes" for 127.0.0.1 at 2018-10-31 01:18:01 +1100
+Processing by PlanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ijoGNRoOrGlRjv0dsxFO4NWjEgDR9gSj/RAaUt9CZ8JClX1lNotQMX79OZz6a/x721eXV7x0ZpKA0PVh2cQn9A==", "plane"=>{"name"=>"777", "rows"=>"150", "columns"=>"9"}, "commit"=>"Create Plane"}
+Unpermitted parameter: :columns
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `log' for #<PlanesController:0x00007fc6f95fa150>
+Did you mean?  loop):
+  
+app/controllers/planes_controller.rb:6:in `create'
+Started POST "/planes" for 127.0.0.1 at 2018-10-31 01:18:26 +1100
+Processing by PlanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ijoGNRoOrGlRjv0dsxFO4NWjEgDR9gSj/RAaUt9CZ8JClX1lNotQMX79OZz6a/x721eXV7x0ZpKA0PVh2cQn9A==", "plane"=>{"name"=>"777", "rows"=>"150", "columns"=>"9"}, "commit"=>"Create Plane"}
+Unpermitted parameter: :columns
+Unpermitted parameter: :columns
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/planes_controller.rb:8
+  [1m[36mPlane Create (0.6ms)[0m  [1m[32mINSERT INTO "planes" ("name", "rows", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "777"], ["rows", 150], ["created_at", "2018-10-30 14:18:26.693803"], ["updated_at", "2018-10-30 14:18:26.693803"]]
+  ↳ app/controllers/planes_controller.rb:8
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/planes_controller.rb:8
+Redirected to http://localhost:3000/planes
+Completed 302 Found in 33ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 01:18:26 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (1.1ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 01:22:28 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.8ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 125ms (Views: 77.6ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 01:22:41 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (5.0ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.6ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 52ms (Views: 43.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 01:27:24 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.6ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.7ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 69ms (Views: 63.0ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mPlane Load (1.8ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+Started POST "/flights" for 127.0.0.1 at 2018-10-31 01:29:38 +1100
+Processing by FlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0fAa4HcFq4OGVkzkYXg4EDwPWFZfa0u7A5uD6msncjwZX2GwW4BX26kliGUoAoqLMvvdATLpKYp+W2zZbaEyCg==", "flight"=>{"origin"=>"cammeray", "destination"=>"sydney", "date"=>"2009/05/06", "plane_id"=>"10"}, "commit"=>"Create Flight"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[36mFlight Create (1.0ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "date", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["plane_id", 10], ["date", "2009-05-06"], ["destination", "sydney"], ["origin", "cammeray"], ["created_at", "2018-10-30 14:29:38.259515"], ["updated_at", "2018-10-30 14:29:38.259515"]]
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/flights_controller.rb:6
+Redirected to http://localhost:3000/flights
+Completed 302 Found in 44ms (ActiveRecord: 15.7ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 01:29:38 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 47ms (Views: 43.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 09:00:06 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (2.4ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 114ms (Views: 106.2ms | ActiveRecord: 2.4ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mPlane Load (0.6ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPlane Destroy (2.7ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPlane Destroy (0.3ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPlane Destroy (0.3ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPlane Destroy (0.4ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPlane Destroy (0.3ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mPlane Create (3.9ms)[0m  [1m[32mINSERT INTO "planes" ("name", "rows", "columns", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "747"], ["rows", 100], ["columns", 8], ["created_at", "2018-10-30 22:00:47.200086"], ["updated_at", "2018-10-30 22:00:47.200086"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlane Create (0.4ms)[0m  [1m[32mINSERT INTO "planes" ("name", "rows", "columns", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "2PP"], ["rows", 7], ["columns", 2], ["created_at", "2018-10-30 22:00:47.207035"], ["updated_at", "2018-10-30 22:00:47.207035"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ db/seeds.rb:15
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mFlight Destroy (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mFlight Destroy (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mFlight Destroy (0.2ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mFlight Create (0.7ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "date", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["plane_id", 11], ["date", "2018-08-09"], ["destination", "there"], ["origin", "here"], ["created_at", "2018-10-30 22:00:47.244642"], ["updated_at", "2018-10-30 22:00:47.244642"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mFlight Create (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "date", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["plane_id", 12], ["date", "2018-08-09"], ["destination", "here"], ["origin", "there"], ["created_at", "2018-10-30 22:00:47.250096"], ["updated_at", "2018-10-30 22:00:47.250096"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "bill@fillmurray.com"], ["name", "Phill Murray"], ["created_at", "2018-10-30 22:00:47.275464"], ["updated_at", "2018-10-30 22:00:47.275464"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:32
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mReservation Destroy (0.4ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mReservation Destroy (0.4ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mReservation Create (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("flight_id", "user_id", "row", "column", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["flight_id", 8], ["user_id", 2], ["row", 5], ["column", 2], ["created_at", "2018-10-30 22:00:47.314724"], ["updated_at", "2018-10-30 22:00:47.314724"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mReservation Create (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("flight_id", "user_id", "row", "column", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["flight_id", 9], ["user_id", 2], ["row", 5], ["column", 2], ["created_at", "2018-10-30 22:00:47.320244"], ["updated_at", "2018-10-30 22:00:47.320244"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ db/seeds.rb:41
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 09:00:50 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 64ms (Views: 60.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/planes" for 127.0.0.1 at 2018-10-31 09:02:16 +1100
+Processing by PlanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YRvrnNOgaRQHm5IhhPvDJLLy5n9/+hSJ4mWeSC9Fi6WptJDM/yWVTCjoVqDNgXG/vAZjKBJ4drifpXF7KcPLkw==", "plane"=>{"name"=>"777", "rows"=>"150", "columns"=>"9"}, "commit"=>"Create Plane"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/planes_controller.rb:8
+  [1m[36mPlane Create (1.8ms)[0m  [1m[32mINSERT INTO "planes" ("name", "rows", "columns", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "777"], ["rows", 150], ["columns", 9], ["created_at", "2018-10-30 22:02:16.931497"], ["updated_at", "2018-10-30 22:02:16.931497"]]
+  ↳ app/controllers/planes_controller.rb:8
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/planes_controller.rb:8
+Redirected to http://localhost:3000/planes
+Completed 302 Found in 13ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 09:02:16 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 60ms (Views: 57.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:02:23 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (1.0ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.8ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 58ms (Views: 50.6ms | ActiveRecord: 2.8ms)
+
+
+  [1m[36mPlane Load (6.0ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+Started POST "/flights" for 127.0.0.1 at 2018-10-31 09:02:52 +1100
+Processing by FlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W7SR42bBj8Wl28A5TS40fqJnO8CcoCweswr/EMep2FuTG+qzSkRznYqoBLgEVIblrJO+l/EiTi/OyhAjwS+YbQ==", "flight"=>{"origin"=>"cammeray", "destination"=>"sydney", "date"=>"2009/05/06", "plane_id"=>"13"}, "commit"=>"Create Flight"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[36mPlane Load (0.6ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[36mFlight Create (1.5ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "date", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["plane_id", 13], ["date", "2009-05-06"], ["destination", "sydney"], ["origin", "cammeray"], ["created_at", "2018-10-30 22:02:52.512557"], ["updated_at", "2018-10-30 22:02:52.512557"]]
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/flights_controller.rb:6
+Redirected to http://localhost:3000/flights
+Completed 302 Found in 11ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:02:52 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 51ms (Views: 46.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:10:50 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.8ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.6ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (63.6ms)
+Completed 200 OK in 131ms (Views: 122.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:11:24 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  Rendered flights/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/views/flights/index.html.erb:15: syntax error, unexpected ')'
+..., nil, class:"form-control") <);@output_buffer.safe_append='...
+...                              ^
+/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/views/flights/index.html.erb:19: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+          ^~~
+/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/views/flights/index.html.erb:21: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/views/flights/index.html.erb:23: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/flights/index.html.erb:15: syntax error, unexpected ')'
+app/views/flights/index.html.erb:19: syntax error, unexpected keyword_end, expecting ')'
+app/views/flights/index.html.erb:21: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/flights/index.html.erb:23: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:11:33 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  Rendered flights/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/views/flights/index.html.erb:15: syntax error, unexpected ')'
+..., nil, class:"form-control") <);@output_buffer.safe_append='...
+...                              ^
+/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/views/flights/index.html.erb:19: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+          ^~~
+/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/views/flights/index.html.erb:21: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/jonathanodlum/wdi/projects/burning-airlines-wdi/burning-airlines-server/app/views/flights/index.html.erb:23: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/flights/index.html.erb:15: syntax error, unexpected ')'
+app/views/flights/index.html.erb:19: syntax error, unexpected keyword_end, expecting ')'
+app/views/flights/index.html.erb:21: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/flights/index.html.erb:23: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:11:43 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.7ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 63ms (Views: 57.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:11:55 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.7ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 48ms (Views: 42.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/flights" for 127.0.0.1 at 2018-10-31 09:12:08 +1100
+Processing by FlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hKj4V1i+eLwSaXOmmZRC8RlD6hom8gZ4SG+gp6p6ScBMB4MHdDuE5D0atyfQ7vBqF7dvTUtwZEk1r0+UrPwJ9g==", "flight"=>{"origin"=>"cammeray", "destination"=>"sydney", "plane_id"=>"12"}, "date"=>["2018-10-25"], "commit"=>"Create Flight"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[36mPlane Load (0.6ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[36mFlight Create (3.2ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["plane_id", 12], ["destination", "sydney"], ["origin", "cammeray"], ["created_at", "2018-10-30 22:12:08.997906"], ["updated_at", "2018-10-30 22:12:08.997906"]]
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/flights_controller.rb:6
+Redirected to http://localhost:3000/flights
+Completed 302 Found in 14ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:12:09 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mCACHE Plane Load (0.0ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 42ms (Views: 37.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:13:08 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.1ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mCACHE Plane Load (0.0ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 2..3)):
+    12:   <strong> Origin: </strong><%= f.text_field :origin %><br>
+    13:   <strong> Destination: </strong><%= f.text_field :destination %><br>
+    14:   <strong> Date: </strong>
+    15:   <%= date_field(:date) %><br>
+    16:   <strong> plane: </strong><%= f.text_field :plane_id %><br>
+    17: 
+    18:   <%= f.submit %>
+  
+app/views/flights/index.html.erb:15:in `block in _app_views_flights_index_html_erb___1127032710745565561_70246333681080'
+app/views/flights/index.html.erb:11:in `_app_views_flights_index_html_erb___1127032710745565561_70246333681080'
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:13:18 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (3.0ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mCACHE Plane Load (0.0ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 60ms (Views: 51.6ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/flights" for 127.0.0.1 at 2018-10-31 09:13:33 +1100
+Processing by FlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KaglDkuYGVmWTSGfEn3UUl1TioytoTV34excZOkKD3bhB15eZx3lAbk+5R5bB2bJU6cP28AjV0acLLNX74xPQA==", "flight"=>{"origin"=>"cammeray", "destination"=>"sydney", "plane_id"=>"11"}, "date"=>["2018-10-17"], "commit"=>"Create Flight"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[36mPlane Load (1.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[36mFlight Create (2.4ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["plane_id", 11], ["destination", "sydney"], ["origin", "cammeray"], ["created_at", "2018-10-30 22:13:33.439364"], ["updated_at", "2018-10-30 22:13:33.439364"]]
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/flights_controller.rb:6
+Redirected to http://localhost:3000/flights
+Completed 302 Found in 13ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:13:33 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.9ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mCACHE Plane Load (0.0ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mCACHE Plane Load (0.0ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 47ms (Views: 42.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:14:09 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.2ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mCACHE Plane Load (0.0ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mCACHE Plane Load (0.0ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 42ms (Views: 38.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/flights" for 127.0.0.1 at 2018-10-31 09:14:20 +1100
+Processing by FlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2eE23X9fOe7BCc0uzXjFRreNj8g2nKK/LEFNoG2zL18RTk2NU9rFtu56Ca+EAnfduXkKn1sewI5RgaKTazVvaQ==", "flight"=>{"origin"=>"cammeray", "destination"=>"sydney", "date"=>"2018-10-18", "plane_id"=>"11"}, "commit"=>"Create Flight"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[36mFlight Create (1.1ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "date", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["plane_id", 11], ["date", "2018-10-18"], ["destination", "sydney"], ["origin", "cammeray"], ["created_at", "2018-10-30 22:14:20.779822"], ["updated_at", "2018-10-30 22:14:20.779822"]]
+  ↳ app/controllers/flights_controller.rb:6
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/flights_controller.rb:6
+Redirected to http://localhost:3000/flights
+Completed 302 Found in 8ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:14:20 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.8ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mCACHE Plane Load (0.1ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mCACHE Plane Load (0.0ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mCACHE Plane Load (0.0ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 47ms (Views: 41.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 09:15:03 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 44ms (Views: 39.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/planes" for 127.0.0.1 at 2018-10-31 09:15:40 +1100
+Processing by PlanesController#index as HTML
+  Rendering planes/index.html.erb within layouts/application
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ app/views/planes/index.html.erb:3
+  Rendered planes/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 49ms (Views: 45.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights" for 127.0.0.1 at 2018-10-31 09:27:07 +1100
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.html.erb:3
+  [1m[36mPlane Load (0.6ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mCACHE Plane Load (0.0ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mCACHE Plane Load (0.0ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  [1m[36mCACHE Plane Load (0.0ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/flights/index.html.erb:5
+  Rendered flights/index.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 112ms (Views: 76.7ms | ActiveRecord: 14.7ms)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mPlane Load (0.6ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPlane Destroy (0.6ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPlane Destroy (0.3ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPlane Destroy (0.3ms)[0m  [1m[31mDELETE FROM "planes" WHERE "planes"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mPlane Create (0.5ms)[0m  [1m[32mINSERT INTO "planes" ("name", "rows", "columns", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "747"], ["rows", 100], ["columns", 8], ["created_at", "2018-10-30 22:39:04.514301"], ["updated_at", "2018-10-30 22:39:04.514301"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlane Create (0.3ms)[0m  [1m[32mINSERT INTO "planes" ("name", "rows", "columns", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "2PP"], ["rows", 7], ["columns", 2], ["created_at", "2018-10-30 22:39:04.516885"], ["updated_at", "2018-10-30 22:39:04.516885"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPlane Load (0.3ms)[0m  [1m[34mSELECT "planes".* FROM "planes"[0m
+  ↳ db/seeds.rb:15
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mFlight Destroy (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mFlight Destroy (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mFlight Destroy (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mFlight Destroy (1.2ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mFlight Destroy (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mFlight Destroy (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mPlane Load (0.4ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mFlight Create (0.5ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "date", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["plane_id", 14], ["date", "2018-08-09"], ["destination", "SFO"], ["origin", "SYD"], ["created_at", "2018-10-30 22:39:04.558881"], ["updated_at", "2018-10-30 22:39:04.558881"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mPlane Load (0.6ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mFlight Create (0.6ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "date", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["plane_id", 15], ["date", "2018-07-09"], ["destination", "SYD"], ["origin", "BNE"], ["created_at", "2018-10-30 22:39:04.564467"], ["updated_at", "2018-10-30 22:39:04.564467"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPlane Load (0.5ms)[0m  [1m[34mSELECT  "planes".* FROM "planes" WHERE "planes"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mFlight Create (0.5ms)[0m  [1m[32mINSERT INTO "flights" ("plane_id", "date", "destination", "origin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["plane_id", 15], ["date", "2018-08-10"], ["destination", "SFO"], ["origin", "SYD"], ["created_at", "2018-10-30 22:39:04.570242"], ["updated_at", "2018-10-30 22:39:04.570242"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "bill@fillmurray.com"], ["name", "Phill Murray"], ["created_at", "2018-10-30 22:39:04.590675"], ["updated_at", "2018-10-30 22:39:04.590675"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mReservation Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mReservation Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mReservation Create (0.8ms)[0m  [1m[32mINSERT INTO "reservations" ("flight_id", "user_id", "row", "column", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["flight_id", 14], ["user_id", 3], ["row", 5], ["column", 2], ["created_at", "2018-10-30 22:39:04.625007"], ["updated_at", "2018-10-30 22:39:04.625007"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mReservation Create (0.2ms)[0m  [1m[32mINSERT INTO "reservations" ("flight_id", "user_id", "row", "column", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["flight_id", 15], ["user_id", 3], ["row", 5], ["column", 2], ["created_at", "2018-10-30 22:39:04.629054"], ["updated_at", "2018-10-30 22:39:04.629054"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ db/seeds.rb:42
