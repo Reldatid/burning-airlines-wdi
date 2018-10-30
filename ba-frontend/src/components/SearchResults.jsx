@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-const DATA_URL = "https://api.myjson.com/bins/nbmvu"
+const DATA_URL = "http://localhost:3000/flights/search"
 
 class SearchResults extends Component {
   constructor(){
@@ -12,25 +12,29 @@ class SearchResults extends Component {
     this.performQuery = this.performQuery.bind( this );
   }
 
+  componentDidUpdate(prevProps){
+    if (prevProps !== this.props) {
+      const queryParams = this.props.match.params.query.split("-")
+      const fromVar = queryParams[0]
+      const toVar = queryParams[2]
+      const searchParams = {origin: fromVar, destination:toVar}
+      this.performQuery( searchParams );
+    }
+  }
+
   componentDidMount(){
-    // console.dir(this.props.match);
     const queryParams = this.props.match.params.query.split("-")
     const fromVar = queryParams[0]
     const toVar = queryParams[2]
-    this.performQuery( fromVar, toVar );
+    const searchParams = {origin: fromVar, destination:toVar}
+    this.performQuery( searchParams );
   }
 
-  performQuery( fromVar, toVar ){
-    axios.get( DATA_URL)
+  performQuery( searchParams ){
+    axios.get(DATA_URL, {params:searchParams})
     .then( response => {
-      const allFlights = response.data.data
-      const relevantFlights = allFlights.filter(function(flight){
-        return (flight.origin === fromVar && flight.destination === toVar);
-      });
-      console.log(relevantFlights);
-      this.setState({
-        flights: relevantFlights
-      });
+      //Update the state to trigger re-render
+      this.setState({flights: response.data})
     })
     .catch( err => {
       console.warn(err);
