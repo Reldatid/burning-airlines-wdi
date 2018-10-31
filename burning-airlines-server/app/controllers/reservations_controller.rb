@@ -15,7 +15,8 @@ class ReservationsController < ApplicationController
       }
     else
       render json: {
-        created: false
+        created: false,
+        errors: reservation.errors.messages
       }
     end
   end
