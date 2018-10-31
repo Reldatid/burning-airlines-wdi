@@ -40,6 +40,7 @@ Temporary Items
 
 # ignore Rails cache files
 tmp/
+log/
 
 !/log/.keep
 !/tmp/.keep
