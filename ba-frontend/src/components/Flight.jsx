@@ -13,6 +13,7 @@ class Flight extends Component{
       user_id: ''
     };
     this.performQuery = this.performQuery.bind( this );
+    this.saveReservation = this.saveReservation.bind( this );
   }
 
   componentDidMount(){
@@ -31,17 +32,23 @@ class Flight extends Component{
     });
   }
 
-  saveReservation(){
+  saveReservation(event){
+    const row = event.target.attributes.theColNumber.nodeValue
+    const column = event.target.attributes.theRowNumber.nodeValue
     const reservationParams = {
-      user_id: 1,
-      flight_id: this.props.match.params.id,
-      row: 1,
-      column: 2
+      user_id: this.state.user_id,
+      flight_id: parseFloat(this.props.match.params.id),
+      row: parseFloat(row),
+      column: parseFloat(column)
     }
-    axios.post(POST_RESV_URL, {params:reservationParams})
+    console.log("These are params", reservationParams);
+    axios.post(POST_RESV_URL, reservationParams)
     .then(response => {
       if (response.data.created) {
+        console.log("YAY IT WORKED");
         //grab the state, grab the row-col, update and save again
+      } else {
+        console.log(response.data);
       }
     })
     .catch(console.warn)
@@ -61,7 +68,7 @@ class Flight extends Component{
                   {
                     row.map((col,colIndex) =>
                     <li>{col===0
-                        ? <button className="bookButton" >Book me!</button>
+                        ? <button onClick={this.saveReservation} className="bookButton" theRowNumber={rowIndex} theColNumber={colIndex}>Book me!</button>
                         :
                         (col === this.state.user_id
                           ?<button className="takenMeButton">Taken by me!</button>

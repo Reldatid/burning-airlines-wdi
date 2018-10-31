@@ -3,6 +3,7 @@ class ReservationsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
+    # raise 'hell'
     reservation = Reservation.create(
       flight_id: params[:flight_id],
       user_id: params[:user_id],
@@ -16,6 +17,7 @@ class ReservationsController < ApplicationController
     else
       render json: {
         created: false,
+        params: params,
         errors: reservation.errors.messages
       }
     end
