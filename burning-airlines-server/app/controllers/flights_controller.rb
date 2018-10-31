@@ -8,6 +8,7 @@ class FlightsController < ApplicationController
   end
 
   def show
+    user = User.first
     flight = Flight.find(params[:id])
     reservations = flight.reservations
     rowColumns = [];
@@ -15,6 +16,7 @@ class FlightsController < ApplicationController
       rowColumns << (reservations[i].row.to_s + reservations[i].column.to_s)
     end
     plane = {
+      user_id: user.id;
       bookings: []
     }
     for i in 0..flight.plane.rows-1 do

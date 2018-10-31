@@ -2,7 +2,7 @@
 <ul>
   <% @flights.each do |flight| %>
     <li>
-      <%= flight.plane.name %> - <%= flight.date %> - <%= flight.origin %> to <%= flight.destination %>
+      <%= flight.date %> - <%= flight.id %> - <%= flight.origin %> > <%= flight.destination %> - <%= flight.plane.name %> <%= flight.plane.rows*flight.plane.columns-flight.reservations.length %>
     </li>
   <% end %>
 </ul>
