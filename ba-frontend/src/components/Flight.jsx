@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../index.css';
 const GET_RESV_URL = "http://localhost:3000/flights/"
 const POST_RESV_URL = "http://localhost:3000/reservations/"
 
@@ -8,7 +9,8 @@ class Flight extends Component{
   constructor(){
     super();
     this.state = {
-      seatAvailability: []
+      seatAvailability: [],
+      user_id: ''
     };
     this.performQuery = this.performQuery.bind( this );
   }
@@ -22,28 +24,28 @@ class Flight extends Component{
     axios.get(url)
     .then( response => {
       console.log(response);
-      this.setState({seatAvailability: response.data.bookings})
+      this.setState({seatAvailability: response.data.bookings, user_id: response.data.user_id})
     })
     .catch( err => {
       console.warn(err);
     });
   }
 
-  // saveReservation(){
-  //   const reservationParams = {
-  //     user_id: 1,
-  //     flight_id: this.props.match.params.id,
-  //     row: 1,
-  //     column: 2
-  //   }
-  //   axios.post(POST_RESV_URL, {params:reservationParams})
-  //   .then(response => {
-  //     this.setState({seatAvailability: response.data})
-  //     //Please send back the response when post is created
-  //     // this.setState({secrets: [response.data.secret,...this.state.secrets]})
-  //   })
-  //   .catch(console.warn)
-  // }
+  saveReservation(){
+    const reservationParams = {
+      user_id: 1,
+      flight_id: this.props.match.params.id,
+      row: 1,
+      column: 2
+    }
+    axios.post(POST_RESV_URL, {params:reservationParams})
+    .then(response => {
+      if (response.data.created) {
+        //grab the state, grab the row-col, update and save again
+      }
+    })
+    .catch(console.warn)
+  }
 
   render(){
     return (
@@ -52,15 +54,25 @@ class Flight extends Component{
         <hr/><hr/>
         <h2>The search results for flight id:  {this.props.match.params.id}!</h2>
         <ul>
-          {
-            this.state.seatAvailability.map((s,index) =>
+          {this.state.seatAvailability.map((row,rowIndex) =>
               <ul>
-                <li>Row {index+1} availability: {
-                    s.map(rowCol => <li>{rowCol ? "Yes" : "No"}</li>)
-                  }</li>
+                <li>Row {rowIndex+1} availability:
+                  <ul>
+                  {
+                    row.map((col,colIndex) =>
+                    <li>{col===0
+                        ? <button className="bookButton" >Book me!</button>
+                        :
+                        (col === this.state.user_id
+                          ?<button className="takenMeButton">Taken by me!</button>
+                          : <button className="takenOtherButton">Taken by someone else!</button>
+                        )
+                        }
+                    </li>)}
+                  </ul>
+                </li>
               </ul>
-            )
-          }
+            )}
         </ul>
       </div>
     );
