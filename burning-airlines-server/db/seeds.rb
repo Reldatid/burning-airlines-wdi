@@ -9,7 +9,7 @@
 Plane.destroy_all
 puts "Creating Planes..."
 
-p1 = Plane.create name: '747', rows: 100, columns: 8
+p1 = Plane.create name: '747', rows: 10, columns: 4
 p2 = Plane.create name: '2PP', rows: 7, columns: 2
 
 puts "Created #{Plane.all.length} Planes!"
