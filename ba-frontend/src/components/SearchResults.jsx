@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-const DATA_URL = "http://localhost:3000/flights/search"
+const FLIGHTS_URL = "http://localhost:3000/flights/search"
 
 class SearchResults extends Component {
+
   constructor(){
     super();
     this.state = {
@@ -31,9 +32,8 @@ class SearchResults extends Component {
   }
 
   performQuery( searchParams ){
-    axios.get(DATA_URL, {params:searchParams})
+    axios.get(FLIGHTS_URL, {params:searchParams})
     .then( response => {
-      //Update the state to trigger re-render
       this.setState({flights: response.data})
     })
     .catch( err => {

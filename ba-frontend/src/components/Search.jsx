@@ -39,7 +39,6 @@ class Search extends Component {
   }
 
   handleInput(event){
-    // console.log(event.target);
     if (event.target[0].textContent === "Select From") {
       this.setState({ from: event.target.value });
     }else {
