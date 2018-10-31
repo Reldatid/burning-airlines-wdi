@@ -37,8 +37,9 @@ class FlightsController < ApplicationController
   end
 
   def index
-    @flights = Flight.all
+    @flights = Flight.all.sort_by(&:date)
     @flight = Flight.new
+    @planes = Plane.all.map{|plane| [plane.name, plane.id]}
   end
 
   def search

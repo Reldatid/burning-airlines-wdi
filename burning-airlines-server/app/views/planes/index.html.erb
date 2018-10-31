@@ -1,16 +1,25 @@
-<h1>All Planes</h1>
-<ul>
-  <% @planes.each do |plane| %>
-    <li>
-      <%= plane.name %> (<%= plane.columns %> x <%= plane.rows %>)
-    </li>
-  <% end %>
-</ul>
+<h1>Planes of Burning Airlines</h1>
+<a href=flights>Go To Flights</a>
 
 <h3>Create a Plane</h3>
 <%= form_for @plane do |f|%>
   <strong> Name: </strong><%= f.text_field :name %><br>
-  <strong> Rows: </strong><%= f.text_field :rows %><br>
-  <strong> Columns: </strong><%= f.text_field :columns %><br>
+  <strong> Rows: </strong><%= f.select :rows, @select_rows %><br>
+  <strong> Columns: </strong><%= f.select :columns, @select_columns %><br>
   <%= f.submit %>
 <% end %>
+
+<h3>All Planes</h3>
+<ul>
+  <% @planes.each do |plane| %>
+    <li>
+      <%= plane.name %> (<%= plane.columns %> x <%= plane.rows %>)
+
+      <div class='grid-container' style="grid-template-columns: repeat(<%= plane.rows %>, 20px); grid-template-rows: repeat(<%= plane.columns %>, 20px);" >
+        <% for i in 0..(plane.columns*plane.rows-1) %>
+        <div class="grid-cell"></div>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
