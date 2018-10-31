@@ -24,7 +24,6 @@ class Flight extends Component{
   performQuery( url ){
     axios.get(url)
     .then( response => {
-      console.log(response);
       this.setState({seatAvailability: response.data.bookings, user_id: response.data.user_id})
     })
     .catch( err => {
@@ -33,19 +32,22 @@ class Flight extends Component{
   }
 
   saveReservation(event){
-    const row = event.target.attributes.theColNumber.nodeValue
-    const column = event.target.attributes.theRowNumber.nodeValue
+    const row = parseFloat(event.target.attributes.therownumber.nodeValue)
+    const column = parseFloat(event.target.attributes.thecolnumber.nodeValue)
     const reservationParams = {
       user_id: this.state.user_id,
       flight_id: parseFloat(this.props.match.params.id),
-      row: parseFloat(row),
-      column: parseFloat(column)
+      row: row,
+      column: column
     }
-    console.log("These are params", reservationParams);
     axios.post(POST_RESV_URL, reservationParams)
     .then(response => {
       if (response.data.created) {
-        console.log("YAY IT WORKED");
+        const tempState = this.state
+        tempState.seatAvailability[row][column] = this.state.user_id
+        console.log("The temp state", tempState);
+        console.log("row: ", row, "col: ", column);
+        this.setState(tempState)
         //grab the state, grab the row-col, update and save again
       } else {
         console.log(response.data);
@@ -68,7 +70,7 @@ class Flight extends Component{
                   {
                     row.map((col,colIndex) =>
                     <li>{col===0
-                        ? <button onClick={this.saveReservation} className="bookButton" theRowNumber={rowIndex} theColNumber={colIndex}>Book me!</button>
+                        ? <button onClick={this.saveReservation} className="bookButton" therownumber={rowIndex} thecolnumber={colIndex} >Book me!</button>
                         :
                         (col === this.state.user_id
                           ?<button className="takenMeButton">Taken by me!</button>

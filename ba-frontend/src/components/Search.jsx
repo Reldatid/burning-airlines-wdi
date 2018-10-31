@@ -51,28 +51,41 @@ class Search extends Component {
   render(){
     return (
       <div>
-        <h2>Flight Search</h2>
+        <div className="searchTitleDiv">
+          <img src="/search_title_plane.png" />
+          <h2 className="searchTitle">Welcome to the great flight search!</h2>
+          <img src="/search_title_plane.png" />
+        </div>
         {/*Error handling for bad input*/}
           {
             this.state.badInput
-            ? <h2>Error: {this.state.badInputText} </h2>
-            : <h3>Select to and from</h3>
+            ? <div className="searchSelectTitleDiv alert alert-danger">
+                <h3><strong>Error:</strong> {this.state.badInputText} </h3>
+              </div>
+            : <div className="searchSelectTitleDiv">
+                <h3>Please Select FROM and TO</h3>
+              </div>
           }
-          <form onSubmit={ ev => this.handleSubmit(ev) }>
-            <select defaultValue="Select From" onChange={ev => this.handleInput(ev)}>
-              <option value="Select From">Select From</option>
-              <option value="SFO">SFO</option>
-              <option value="SYD">SYD</option>
-              <option value="BNE">BNE</option>
-            </select>
-            <select defaultValue="Select To" onChange={ev => this.handleInput(ev)}>
-              <option value="Select To">Select To</option>
-              <option value="SFO">SFO</option>
-              <option value="SYD">SYD</option>
-              <option value="BNE">BNE</option>
-            </select>
-            <input type="submit" value="Search" />
-          </form>
+          <div className="selectFormDiv">
+            <form onSubmit={ ev => this.handleSubmit(ev) }>
+            <div className="form-group">
+
+              <select className="form-control form-control-lg" defaultValue="Select From" onChange={ev => this.handleInput(ev)}>
+                <option value="Select From">Select From</option>
+                <option value="SFO">SFO</option>
+                <option value="SYD">SYD</option>
+                <option value="BNE">BNE</option>
+              </select>
+              <select className="form-control form-control-lg" defaultValue="Select To" onChange={ev => this.handleInput(ev)}>
+                <option value="Select To">Select To</option>
+                <option value="SFO">SFO</option>
+                <option value="SYD">SYD</option>
+                <option value="BNE">BNE</option>
+              </select>
+              <input className="btn btn-light btn-lg fromToButton" type="submit" value="Search" />
+            </div>
+            </form>
+          </div>
       </div>
     );
   }

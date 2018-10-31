@@ -44,21 +44,22 @@ class SearchResults extends Component {
   render(){
     return (
       <div>
-        <br/>
-        <hr/><hr/>
-        <h2>The search results for search {this.props.match.params.query}!</h2>
-        <ul>
-          {
-            this.state.flights.map( f =>
-              <ul key={f.id}>
-                <li>Flight Id: {f.id}</li>
-                <li>Plane Id: {f.id}</li>
-                <li>Date: {f.date}</li>
-                <li><Link to={`/flight/${f.id}`}>Reserve Seats</Link></li>
-              </ul>
-            )
-          }
-        </ul>
+        <div className="searchResultsTitleDiv">
+          <hr/><hr/>
+        <h2>Current flights from ({this.props.match.params.query.split("-to-")[0]}) to ( {this.props.match.params.query.split("-to-")[1]})</h2>
+          <hr/><hr/>
+        </div>
+          {this.state.flights.map( f =>
+
+              <div class="card text-white bg-info mb-3 searchResultsCard">
+                <div class="card-header">Flight ID: {f.id}</div>
+                <div class="card-body">
+                  <h5 class="card-title">Plane ID: {f.plane_id} </h5>
+                  <p class="card-text">This plane departs on {f.date}</p>
+                  <Link to={`/flight/${f.id}`}><button className="btn btn-light searchResultsButton">Reserve Seats </button> </Link>
+                </div>
+              </div>
+            )}
       </div>
     );
   }

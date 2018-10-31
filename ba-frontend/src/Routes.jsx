@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter as Router, Route, Switch} from 'react-router-dom';
+import {HashRouter as Router, Route} from 'react-router-dom';
 import Search from './components/Search';
 import SearchResults from './components/SearchResults';
 import Flight from './components/Flight';

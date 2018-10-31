@@ -1,19 +1,81 @@
+/* global */
 body {
-  margin: 0;
-  padding: 0;
-  background-color: 'hotpink';
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: rgb(132,210,246);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* search page Main Title */
+.searchTitleDiv{
+  text-align: center;
+  background-color: rgb(73,198,229);
+  border-radius: 32px;
+  margin: 3vw 7vw 5vw 7vw;
 }
 
+.searchTitleDiv img{
+  max-height: 12vw;
+  max-width: 12vw;
+  padding-bottom: 3vw;
+}
+
+.searchTitle{
+  padding: 5vw;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+/* search page Select Title */
+.searchSelectTitleDiv{
+  border-radius: 15px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1vw;
+  max-width: 45vw;
+  padding-bottom: 1vw;
+}
+
+/* search page Select form styling */
+.selectFormDiv{
+  width: 55vw;
+  /* padding-top: 1vw; */
+  margin: 0 auto;
+  background-color: rgb(48,107,172);
+  border-radius: 23px;
+}
+
+.form-group{
+  padding: 1vw 3vw;
+}
+
+.form-control{
+  max-width: 15vw;
+  display: inline-block;
+  margin: 2vw !important;
+  border: 3px solid black;
+}
+
+.fromToButton{
+  width: 11vw;
+  border: 3px solid black;
+}
+
+/* search page Results */
+.searchResultsTitleDiv{
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 2vw;
+  padding-bottom: 1vw;
+}
+
+.searchResultsCard{
+  max-width: 15vw;
+  margin: 0 auto;
+}
+
+.searchResultsButton{
+  margin: 0 auto !important;
+}
+
+/* reservation (flight) page */
 .bookButton{
   background-color: green;
 }
