@@ -16,7 +16,7 @@ class FlightsController < ApplicationController
       rowColumns << (reservations[i].row.to_s + reservations[i].column.to_s)
     end
     plane = {
-      user_id: user.id;
+      user_id: user.id,
       bookings: []
     }
     for i in 0..flight.plane.rows-1 do
@@ -24,9 +24,11 @@ class FlightsController < ApplicationController
       for j in 0..flight.plane.columns-1 do
         rc = i.to_s + j.to_s
         if ( rowColumns.include?(rc))
-          plane[:bookings][i] << false;
+          seat = reservations.select{ |item| item[:row] == i && item[:column] == j }
+          id = seat[0][:user_id]
+          plane[:bookings][i] << id
         else
-          plane[:bookings][i] << true;
+          plane[:bookings][i] << 0
         end
       end
     end

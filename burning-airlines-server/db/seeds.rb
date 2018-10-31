@@ -36,7 +36,7 @@ puts "Created #{User.all.length} Users!"
 Reservation.destroy_all
 puts "Creating Resevations..."
 
-r1 = Reservation.create flight_id: f1.id, user_id: u1.id, row:5, column:2
-r2 = Reservation.create flight_id: f2.id, user_id: u1.id, row:5, column:2
+r1 = Reservation.create flight_id: f1.id, user_id: u1.id, row:5, column:1
+r2 = Reservation.create flight_id: f2.id, user_id: u1.id, row:5, column:1
 
 puts "Created #{Reservation.all.length} Reservations!"
