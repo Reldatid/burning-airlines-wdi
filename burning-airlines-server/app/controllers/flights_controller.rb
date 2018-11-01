@@ -4,6 +4,9 @@ class FlightsController < ApplicationController
 
   def create
     flight = Flight.create flight_params
+    unless flight.persisted?
+      flash[:errors] = flight.errors.messages
+    end
     redirect_to flights_path
   end
 
@@ -37,6 +40,9 @@ class FlightsController < ApplicationController
   end
 
   def index
+    if flash[:errors]
+      @errors = flash[:errors]
+    end
     @flights = Flight.all.sort_by(&:date)
     @flight = Flight.new
     @planes = Plane.all.map{|plane| [plane.name, plane.id]}

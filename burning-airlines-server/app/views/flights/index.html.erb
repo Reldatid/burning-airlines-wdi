@@ -11,6 +11,11 @@
 </div>
   <%= f.submit %>
 <% end %>
+<% if @errors %>
+  <% @errors.each do |key, err|  %>
+    <%= key %> <%= err[0] %> <br>
+  <% end %>
+<% end %>
 
 <h2>Upcoming Flights</h2>
 <table>

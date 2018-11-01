@@ -10,6 +10,11 @@
 </div>
 <%= f.submit %>
 <% end %>
+<% if @errors %>
+  <% @errors.each do |key, err|  %>
+    <%= key %> <%= err[0] %> <br>
+  <% end %>
+<% end %>
 
 <h2>All Planes</h2>
 <ul class="planes">
