@@ -23,6 +23,7 @@ class Flight extends Component{
   componentDidMount(){
     const searchUrl = GET_RESV_URL + this.props.match.params.id
     this.performQuery(searchUrl)
+    setInterval(() => this.performQuery(searchUrl), 2000);
   }
 
   performQuery( url ){
