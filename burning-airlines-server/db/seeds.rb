@@ -30,7 +30,7 @@ puts "Creating Users..."
 
 u1 = User.create name:'Phill Murray', email:'bill@fillmurray.com'
 u2 = User.create name:'Robert Murray', email:'bob@fillmurray.com'
-u3 = User.create name:'Robert Murray', email:'bob@fillmurray.com'
+u3 = User.create name:'Frank Murray', email:'frank@fillmurray.com'
 
 puts "Created #{User.all.length} Users!"
 
