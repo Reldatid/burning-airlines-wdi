@@ -79,6 +79,19 @@ body {
   margin: 0 auto !important;
 }
 
+.noSearchResults{
+  width:45vw;
+  height:25vw;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 3vw;
+}
+
+.noSearchResultsIMG img{
+  max-width: 50%;
+  max-height: 50%;
+}
+
 /* reservation (flight) page */
 .reservationsTitleDiv{
   text-align: center;
@@ -89,7 +102,7 @@ div[class^="col-md-1"] {
 }
 
 .bookButton, .takenMeButton, .takenOtherButton{
-  width: 15vw;
+  width: 5vw;
   white-space: normal;
   font-weight: 600;
 }
@@ -106,6 +119,7 @@ div[class^="col-md-1"] {
   height:3vw;
   line-height: 3vw;
   white-space: normal;
+  font-weight: 600;
 }
 
 .seatRow{
@@ -115,18 +129,39 @@ div[class^="col-md-1"] {
 .bookButton{
   background-color: rgb(6, 214, 160);
 }
+.bookButtonEG{
+  background-color: rgb(6, 214, 160);
+  width: 9vw;
+}
+
 .takenMeButton{
   background-color: orange;
+}
+
+.takenMeButtonEG{
+  background-color: orange;
+  width: 9vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.noHover{
+  pointer-events: none;
 }
 
 .takenOtherButton{
   background-color: red;
 }
 
+.takenOtherButtonEG{
+  background-color: red;
+  width: 9vw;
+}
+
 .flightBackButtonDiv{
   background-color: rgb(48,107,172);
   border-radius: 23px;
-  height: 7vw;
+  height: 5vw;
   width: 25vw;
   margin: 4vw auto;
   text-align: center;

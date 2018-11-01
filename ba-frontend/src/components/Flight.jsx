@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../index.css';
+import Confirm from "./Confirm"
+import "@reach/dialog/styles.css"
 const GET_RESV_URL = "http://localhost:3000/flights/"
 const POST_RESV_URL = "http://localhost:3000/reservations/"
 const letterArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
@@ -39,8 +41,9 @@ class Flight extends Component{
 
 
   saveReservation(event){
-    const row = parseFloat(event.target.attributes.therownumber.nodeValue)
-    const column = parseFloat(event.target.attributes.thecolnumber.nodeValue)
+    console.log("BACK EVENT", event);
+    const row = parseFloat(event.currentTarget.attributes.therownumber.nodeValue)
+    const column = parseFloat(event.currentTarget.attributes.thecolnumber.nodeValue)
     const reservationParams = {
       user_id: this.state.user_id,
       flight_id: parseFloat(this.props.match.params.id),
@@ -63,28 +66,46 @@ class Flight extends Component{
     .catch(console.warn)
   }
 
+  // Getting the modal working
+  saveReservationTEMP = () => {alert("Submitted")}
+
   render(){
     return (
       <div>
         <div className="reservationsTitleDiv">
         <hr/><hr/>
         <h2>Current reservations for flight id:  {this.props.match.params.id}</h2>
+        <button className="btn btn-light btn-lg bookButtonEG noHover"> Bookable</button>
+        <button className="btn btn-light btn-lg takenMeButtonEG noHover"> Taken (you)</button>
+        <button className="btn btn-light btn-lg takenOtherButtonEG noHover"> Taken (other)</button>
         <hr/><hr/>
         </div>
           {this.state.seatAvailability.map((row,rowIndex) =>
             <div> {/*The whole map*/}
             <div className="row seatRow">
               <div className="rowTitle">Row {rowIndex +1}</div>
+                  {/*Start first level ternary on rows*/}
                   {row.map((col,colIndex) =>
                   <div className="col">
                     {col===0
-                    ? <button onClick={this.saveReservation} className="btn btn-light btn-lg bookButton" therownumber={rowIndex} thecolnumber={colIndex}> [{letterArray[colIndex]}] Book me!</button>
+                    ?
+                    /*Start of confirm dialogue calling*/
+                    <Confirm title="Confirm" description="Are you sure?">
+                      {confirm => (
+                    <button data-toggle="modal" data-target="#exampleModalCenter"  onClick={confirm(this.saveReservation)} className="btn btn-light btn-lg bookButton" therownumber={rowIndex} thecolnumber={colIndex}> [{letterArray[colIndex]}]</button>
+                      )}
+                    </Confirm>
+                    /*End of confirm dialogue calling*/
+
                     :
+                    /*Start nested ternary on columns*/
+                    /*If column is my user id, color to reflect it is already booked by me*/
                     (col === this.state.user_id
-                      ?<button className="btn btn-light btn-lg takenMeButton"> [{letterArray[colIndex]}] Taken by me!</button>
-                      : <button className="btn btn-light btn-lg takenOtherButton"> [{letterArray[colIndex]}] Taken (other) </button>
-                    )
-                    }
+                      ?<button data-toggle="modal" data-target="#exampleModalCenter"  className="btn btn-light btn-lg takenMeButton noHover"> [{letterArray[colIndex]}]</button>
+                      /*If column is not user id, color to reflect it is already booked by someone else*/
+                      :<button data-toggle="modal" data-target="#exampleModalCenter"  className="btn btn-light btn-lg takenOtherButton noHover"> [{letterArray[colIndex]}] </button>)
+                      /*End nested ternary on columns*/
+                    } {/*End first level ternary on rows*/}
                   </div>)} {/*end col map*/}
               </div> {/*end div for row number*/}
             </div>  /*end the whole map*/

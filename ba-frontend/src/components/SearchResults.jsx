@@ -51,20 +51,36 @@ class SearchResults extends Component {
         </div>
         <div className="searchResultsCardDiv container">
           <div className="row">
-
-          {this.state.flights.map( f =>
-            <div className="col">
-              <div class="card text-white bg-info mb-3 searchResultsCard">
-                <div class="card-header">Flight ID: {f.id}</div>
-                <div class="card-body">
-                  <h5 class="card-title">Plane ID: {f.plane_id} </h5>
-                  <p class="card-text">This plane departs on {f.date}</p>
-                  <Link to={`/flight/${f.id}`}><button className="btn btn-light searchResultsButton">Reserve Seats </button> </Link>
+          {/*ternary to display search results only if there are any*/}
+          {this.state.flights.length>0
+            ?
+            <div>
+            {this.state.flights.map( f =>
+              <div className="col">
+                <div class="card text-white bg-info mb-3 searchResultsCard">
+                  <div class="card-header">Flight ID: {f.id}</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Plane ID: {f.plane_id} </h5>
+                    <p class="card-text">This plane departs on {f.date}</p>
+                    <Link to={`/flight/${f.id}`}><button className="btn btn-light searchResultsButton">Reserve Seats </button> </Link>
+                  </div>
                 </div>
-              </div>
-            </div> /*end of bootstrap col*/
+              </div> /*end of bootstrap col*/
 
-          )}
+            )} {/*end of flights map*/}
+
+
+
+            </div>
+            :
+            <div class="alert alert-info noSearchResults" role="alert"> <h3>No flights to display. Try another search</h3>
+            <div class="noSearchResultsIMG">
+              <img src="/shrug.png"/>
+            </div>
+            </div>
+          }
+
+
         </div> {/*end of bootstrap row*/}
       </div> {/*end of bootstrap container*/}
 
