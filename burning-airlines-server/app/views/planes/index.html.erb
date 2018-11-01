@@ -3,23 +3,31 @@
 
 <h3>Create a Plane</h3>
 <%= form_for @plane do |f|%>
+<div class="form-grid">
   <strong> Name: </strong><%= f.text_field :name %><br>
   <strong> Rows: </strong><%= f.select :rows, @select_rows %><br>
   <strong> Columns: </strong><%= f.select :columns, @select_columns %><br>
-  <%= f.submit %>
+</div>
+<%= f.submit %>
 <% end %>
 
-<h3>All Planes</h3>
-<ul>
+<h2>All Planes</h2>
+<ul class="planes">
   <% @planes.each do |plane| %>
-    <li>
-      <%= plane.name %> (<%= plane.columns %> x <%= plane.rows %>)
-
-      <div class='grid-container' style="grid-template-columns: repeat(<%= plane.rows %>, 20px); grid-template-rows: repeat(<%= plane.columns %>, 20px);" >
-        <% for i in 0..(plane.columns*plane.rows-1) %>
-        <div class="grid-cell"></div>
+    <li class="plane"> <h3>Plane name - <%= plane.name %></h3>
+      <div class='plane-grid-container' style="grid-template-columns: repeat(<%= plane.rows+1 %>, 30px); grid-template-rows: repeat(<%= plane.columns+1 %>, 30px);" >
+      <% for i in 0..plane.rows %>
+        <% for j in 0..plane.columns %>
+          <% if i != 0 && j != 0 %>
+            <div class="seat-cell" style="grid-row: <%= j+1 %> ; grid-column:<%= i+1 %>"></div>
+          <% elsif i == 0 && j != 0%>
+            <div style="grid-row: <%= j+1 %> ; grid-column:<%= i+1 %>"><%=@columns[j-1]%></div>
+          <% elsif j == 0 && i != 0 %>
+            <div style="text-align: center; grid-row: <%= j+1 %> ; grid-column:<%= i+1 %>"><%= i %></div>
+          <% end %>
         <% end %>
-      </div>
+      <% end %>
+    </div>
     </li>
   <% end %>
 </ul>

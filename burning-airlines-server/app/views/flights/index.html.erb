@@ -2,19 +2,32 @@
 <a href=planes>Go To Planes</a>
 <h3>Create a flight</h3>
 <%= form_for @flight do |f|%>
+<div class="flight-form-grid">
   <strong> Origin: </strong><%= f.text_field :origin %><br>
   <strong> Destination: </strong><%= f.text_field :destination %><br>
   <strong> Date: </strong>
-  <%= f.date_field :date %><br>
+  <%= f.date_field :date, :value => Time.now.strftime('%Y-%m-%d')%><br>
   <strong> plane: </strong><%= f.select :plane_id, @planes %><br>
-
+</div>
   <%= f.submit %>
 <% end %>
 
-<ul>
+<h2>Upcoming Flights</h2>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Plane</th>
+    <th>Flight ID</th>
+    <th>From > To</th>
+    <th>Available Seats</th>
+  </tr>
   <% @flights.each do |flight| %>
-    <li>
-      <%= flight.date %> - <%= flight.id %> - <%= flight.origin %> > <%= flight.destination %> - <%= flight.plane.name %> <%= flight.plane.rows*flight.plane.columns-flight.reservations.length %>
-    </li>
+    <tr>
+      <td><%= flight.date %></td>
+      <td><%= flight.plane.name %></td>
+      <td><%= flight.id %></td>
+      <td><%= flight.origin %> > <%= flight.destination %></td>
+      <td><%= flight.plane.rows*flight.plane.columns-flight.reservations.length %></td>
+    </tr>
   <% end %>
-</ul>
+</table>

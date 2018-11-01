@@ -20,12 +20,77 @@
         box-sizing: border-box;
 }
 
-.grid-container{
+html{
+  padding-left: 0px;
+}
+
+body{
+  background-color: #49C6E5;
+  text-align: center;
+  width: 100%;
+}
+
+.plane-grid-container{
   display: grid;
 }
 
-.grid-cell{
+.seat-cell{
   border: 1px solid black;
+  width: 95%;
+  height: 95%;
+  border-radius: 15%;
+}
+
+ul.planes{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+li.plane{
   width: 100%;
-  height:100%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+}
+
+li h3{
+  text-align: left;
+}
+
+table {
+  margin-left:auto;
+  margin-right:auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+th{
+  background-color: #048A81;
+}
+
+td{
+background-color: #06D6A0;
+  text-align: center;
+}
+
+.seat-cell{
+  background-color: #8A89C0;
+}
+
+
+.form-grid{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.form-grid strong{
+  margin-right: 10px;
+  text-align: right;
+  grid-column: 2;
 }
