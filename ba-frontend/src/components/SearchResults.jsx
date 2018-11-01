@@ -49,8 +49,11 @@ class SearchResults extends Component {
         <h2>Current flights from ({this.props.match.params.query.split("-to-")[0]}) to ( {this.props.match.params.query.split("-to-")[1]})</h2>
           <hr/><hr/>
         </div>
-          {this.state.flights.map( f =>
+        <div className="searchResultsCardDiv container">
+          <div className="row">
 
+          {this.state.flights.map( f =>
+            <div className="col">
               <div class="card text-white bg-info mb-3 searchResultsCard">
                 <div class="card-header">Flight ID: {f.id}</div>
                 <div class="card-body">
@@ -59,7 +62,12 @@ class SearchResults extends Component {
                   <Link to={`/flight/${f.id}`}><button className="btn btn-light searchResultsButton">Reserve Seats </button> </Link>
                 </div>
               </div>
-            )}
+            </div> /*end of bootstrap col*/
+
+          )}
+        </div> {/*end of bootstrap row*/}
+      </div> {/*end of bootstrap container*/}
+
       </div>
     );
   }

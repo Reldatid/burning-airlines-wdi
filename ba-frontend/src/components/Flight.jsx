@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../index.css';
 const GET_RESV_URL = "http://localhost:3000/flights/"
 const POST_RESV_URL = "http://localhost:3000/reservations/"
+const letterArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
 class Flight extends Component{
 
@@ -14,6 +15,7 @@ class Flight extends Component{
     };
     this.performQuery = this.performQuery.bind( this );
     this.saveReservation = this.saveReservation.bind( this );
+    this.goBack = this.goBack.bind(this);
   }
 
   componentDidMount(){
@@ -30,6 +32,11 @@ class Flight extends Component{
       console.warn(err);
     });
   }
+
+  goBack(){
+      this.props.history.goBack();
+  }
+
 
   saveReservation(event){
     const row = parseFloat(event.target.attributes.therownumber.nodeValue)
@@ -59,33 +66,37 @@ class Flight extends Component{
   render(){
     return (
       <div>
-        <br/>
+        <div className="reservationsTitleDiv">
         <hr/><hr/>
-        <h2>The search results for flight id:  {this.props.match.params.id}!</h2>
-        <ul>
+        <h2>Current reservations for flight id:  {this.props.match.params.id}</h2>
+        <hr/><hr/>
+        </div>
           {this.state.seatAvailability.map((row,rowIndex) =>
-              <ul>
-                <li>Row {rowIndex+1} availability:
-                  <ul>
-                  {
-                    row.map((col,colIndex) =>
-                    <li>{col===0
-                        ? <button onClick={this.saveReservation} className="bookButton" therownumber={rowIndex} thecolnumber={colIndex} >Book me!</button>
-                        :
-                        (col === this.state.user_id
-                          ?<button className="takenMeButton">Taken by me!</button>
-                          : <button className="takenOtherButton">Taken by someone else!</button>
-                        )
-                        }
-                    </li>)}
-                  </ul>
-                </li>
-              </ul>
+            <div> {/*The whole map*/}
+            <div className="row seatRow">
+              <div className="rowTitle">Row {rowIndex +1}</div>
+                  {row.map((col,colIndex) =>
+                  <div className="col">
+                    {col===0
+                    ? <button onClick={this.saveReservation} className="btn btn-light btn-lg bookButton" therownumber={rowIndex} thecolnumber={colIndex}> [{letterArray[colIndex]}] Book me!</button>
+                    :
+                    (col === this.state.user_id
+                      ?<button className="btn btn-light btn-lg takenMeButton"> [{letterArray[colIndex]}] Taken by me!</button>
+                      : <button className="btn btn-light btn-lg takenOtherButton"> [{letterArray[colIndex]}] Taken (other) </button>
+                    )
+                    }
+                  </div>)} {/*end col map*/}
+              </div> {/*end div for row number*/}
+            </div>  /*end the whole map*/
             )}
-        </ul>
+
+          <div className="flightBackButtonDiv">
+              <button className="btn btn-light btn-lg goBackButton" onClick={this.goBack}>Go Back</button>
+          </div>
+
       </div>
-    );
-  }
+    ); /*end of return*/
+  } /*end of render*/
 }
 
 export default Flight;

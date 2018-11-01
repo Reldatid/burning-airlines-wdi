@@ -66,6 +66,10 @@ body {
   padding-bottom: 1vw;
 }
 
+.searchResultsTitleDiv hr{
+  height: 5px;
+}
+
 .searchResultsCard{
   max-width: 15vw;
   margin: 0 auto;
@@ -76,13 +80,60 @@ body {
 }
 
 /* reservation (flight) page */
+.reservationsTitleDiv{
+  text-align: center;
+}
+
+div[class^="col-md-1"] {
+  border: 1px solid black;
+}
+
+.bookButton, .takenMeButton, .takenOtherButton{
+  width: 15vw;
+  white-space: normal;
+  font-weight: 600;
+}
+
+.rowTitle{
+  width: 9vw;
+  margin-left: 2vw;
+  margin-right: 5vw;
+  margin-top: 5px;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  background-color: rgb(138,137,192);
+  border-radius: 3px;
+  height:3vw;
+  line-height: 3vw;
+  white-space: normal;
+}
+
+.seatRow{
+  padding-top: 3vw;
+}
+
 .bookButton{
-  background-color: green;
+  background-color: rgb(6, 214, 160);
 }
 .takenMeButton{
-  background-color: purple;
+  background-color: orange;
 }
 
 .takenOtherButton{
   background-color: red;
+}
+
+.flightBackButtonDiv{
+  background-color: rgb(48,107,172);
+  border-radius: 23px;
+  height: 7vw;
+  width: 25vw;
+  margin: 4vw auto;
+  text-align: center;
+}
+
+
+.goBackButton{
+  margin-top: 1vw;
+  border: 3px solid black;
 }
